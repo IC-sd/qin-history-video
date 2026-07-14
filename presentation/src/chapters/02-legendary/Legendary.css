@@ -1,0 +1,146 @@
+/* ─────────────────────────────────────────────────────────────────────
+ * Chapter 02 — 传奇人生的开始
+ * kraft-paper theme
+ * ───────────────────────────────────────────────────────────────────── */
+.lg-scene { color: var(--text); }
+.lg-em { color: var(--accent); }
+
+/* layout */
+.lg-body {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  padding-top: var(--space-5);
+  font-size: var(--t-body);
+}
+.lg-center { align-items: center; text-align: center; }
+.lg-title {
+  font-size: var(--t-h1);
+  line-height: 1.15;
+  margin: 0;
+}
+.lg-text {
+  font-family: var(--font-body);
+  font-size: var(--t-body);
+  line-height: 1.7;
+  color: var(--text-2);
+  max-width: 70ch;
+  margin: 0;
+}
+.lg-footnote {
+  display: flex;
+  align-items: center;
+  gap: var(--space-3);
+  margin-top: var(--space-5);
+}
+
+/* Step 1 — 奇货可居 */
+.lg-bigquote {
+  display: flex;
+  justify-content: center;
+}
+.lg-hero-quote {
+  font-size: clamp(80px, 8vw, 140px);
+  line-height: 1;
+  color: var(--accent);
+}
+
+/* Step 2 — 投资路线图 */
+.lg-path {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-5);
+  width: 100%;
+  align-items: center;
+}
+.lg-path-item {
+  display: flex;
+  align-items: center;
+  gap: var(--space-5);
+  font-size: var(--t-body);
+}
+.lg-path-dot {
+  width: 12px;
+  height: 12px;
+  border-radius: 50%;
+  background: var(--accent);
+  box-shadow: 0 0 10px var(--accent-glow);
+  flex-shrink: 0;
+}
+.lg-path-dot-last {
+  background: var(--text-mute);
+  box-shadow: none;
+}
+.lg-path-label {
+  font-size: var(--t-h2);
+  line-height: 1.2;
+}
+
+/* Step 3 — 赵姬 timeline */
+.lg-timeline {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-4);
+  width: 100%;
+}
+.lg-tl-item {
+  display: flex;
+  align-items: center;
+  gap: var(--space-4);
+  font-size: var(--t-body);
+}
+.lg-tl-tag {
+  display: inline-flex;
+  align-items: center;
+  padding: 2px 10px;
+  border: 1px solid var(--rule);
+  border-radius: var(--r-pill);
+  font-size: 11px;
+  letter-spacing: 0.15em;
+  text-transform: uppercase;
+  color: var(--text-mute);
+  min-width: 60px;
+  justify-content: center;
+}
+
+/* Step 4 — 嬴政出生 */
+.lg-birth-hero {
+  margin-bottom: var(--space-3);
+}
+.lg-hero-num {
+  font-size: clamp(90px, 9vw, 160px);
+  line-height: 1;
+  font-family: var(--hero-num-font);
+  font-style: var(--hero-num-style);
+  font-weight: var(--hero-num-weight);
+}
+
+/* Step 5 — 流亡时间线 */
+.lg-chronology {
+  display: flex;
+  flex-wrap: wrap;
+  gap: var(--space-4) var(--space-9);
+  justify-content: center;
+  width: 100%;
+}
+.lg-ch-item {
+  display: flex;
+  align-items: center;
+  gap: var(--space-4);
+  flex: 0 0 auto;
+  font-size: var(--t-body);
+}
+.lg-ch-year {
+  font-size: 13px;
+  letter-spacing: 0.1em;
+  color: var(--accent);
+  min-width: 80px;
+  text-align: right;
+  font-weight: 600;
+}
+
+/* Step 6 — 登基 */
+.lg-throne {
+  margin-bottom: var(--space-3);
+}

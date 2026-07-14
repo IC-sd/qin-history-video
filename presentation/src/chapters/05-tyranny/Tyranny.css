@@ -1,0 +1,288 @@
+/* ─────────────────────────────────────────────────────────────────────
+ * Chapter 05 — 荒淫暴君 焚书坑儒
+ * kraft-paper theme: warm beige, deep brown ink, copper-rust accent.
+ * Dark / fire mood for the tyrant's descent.
+ * ───────────────────────────────────────────────────────────────────── */
+
+.ty-scene { color: var(--text); }
+.ty-em { color: var(--accent); }
+
+/* ─── Step 0: 残暴治国 (harsh rule) ─── */
+.ty-body {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  padding-top: var(--space-5);
+  font-size: var(--t-body);
+}
+.ty-center { align-items: center; text-align: center; }
+.ty-title {
+  font-size: var(--t-h1);
+  line-height: 1.15;
+  margin: 0;
+}
+.ty-text {
+  font-family: var(--font-body);
+  font-size: var(--t-body);
+  line-height: 1.7;
+  color: var(--text-2);
+  max-width: 60ch;
+  margin: 0;
+}
+
+.ty-footnote {
+  display: flex;
+  align-items: center;
+  gap: var(--space-3);
+  margin-top: var(--space-5);
+}
+
+/* ─── Step 1: 阿房宫与骊山墓 ─── */
+.ty-palace-grid {
+  flex: 1;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: var(--space-7);
+  padding-top: var(--space-5);
+  align-items: start;
+}
+.ty-palace-side {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-5);
+}
+.ty-palace-name {
+  font-size: var(--t-h1);
+  line-height: 1.2;
+  margin: 0;
+}
+.ty-palace-desc {
+  font-family: var(--font-body);
+  font-size: var(--t-body);
+  line-height: 1.7;
+  color: var(--text-2);
+}
+.ty-palace-num {
+  font-size: clamp(80px, 7vw, 120px);
+  line-height: 1;
+  font-family: var(--hero-num-font);
+  font-style: var(--hero-num-style);
+  font-weight: var(--hero-num-weight);
+}
+
+.ty-palace-sub {
+  font-family: var(--font-body);
+  font-size: var(--t-body);
+  line-height: 1.4;
+  color: var(--text-2);
+}
+.ty-palace-divider {
+  width: 2px;
+  align-self: stretch;
+  background: var(--accent);
+  opacity: 0.4;
+  margin-top: var(--space-7);
+  margin-bottom: var(--space-4);
+}
+
+.ty-mercury-line {
+  display: flex;
+  align-items: center;
+  gap: var(--space-4);
+  margin-top: var(--space-5);
+  padding: var(--space-3) var(--space-5);
+  background: var(--accent-soft);
+  border-left: 3px solid var(--accent);
+}
+.ty-mercury-label {
+  font-family: var(--font-mono);
+  font-size: 11px;
+  letter-spacing: 0.18em;
+  text-transform: uppercase;
+  color: var(--accent);
+}
+
+/* ─── Step 2: 数据暴击 ─── */
+.ty-data-flex {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  gap: var(--space-7);
+  padding-top: var(--space-5);
+}
+.ty-data-row {
+  display: flex;
+  align-items: baseline;
+  gap: var(--space-5);
+  flex-wrap: wrap;
+  justify-content: center;
+}
+.ty-data-num {
+  font-size: clamp(100px, 10vw, 180px);
+  line-height: 1;
+  font-family: var(--hero-num-font);
+  font-style: var(--hero-num-style);
+  font-weight: var(--hero-num-weight);
+  color: var(--accent);
+  letter-spacing: -0.03em;
+}
+.ty-data-unit {
+  font-family: var(--font-body);
+  font-size: var(--t-h2);
+  color: var(--text);
+}
+.ty-data-label {
+  font-family: var(--font-mono);
+  font-size: 13px;
+  letter-spacing: 0.18em;
+  text-transform: uppercase;
+  color: var(--text-mute);
+}
+.ty-data-bottom {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: var(--space-3);
+}
+
+/* ─── Step 3: 焚书坑儒 ─── */
+.ty-fire-scene {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  gap: var(--space-3);
+}
+.ty-fire-hero {
+  font-size: clamp(90px, 9vw, 160px);
+  line-height: 1;
+  font-family: var(--hero-num-font);
+  font-style: var(--hero-num-style);
+  font-weight: var(--hero-num-weight);
+  color: var(--accent);
+}
+.ty-fire-detail {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: var(--space-5);
+  max-width: 90ch;
+}
+.ty-fire-row {
+  display: flex;
+  align-items: center;
+  gap: var(--space-5);
+  padding: var(--space-4) var(--space-5);
+  border-left: 3px solid var(--accent);
+  background: var(--accent-soft);
+}
+.ty-fire-icon {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 44px;
+  height: 44px;
+  border-radius: var(--r-pill);
+  background: var(--accent);
+  color: var(--surface);
+  font-family: var(--font-mono);
+  font-size: 18px;
+  flex-shrink: 0;
+}
+.ty-fire-text {
+  font-family: var(--font-body);
+  font-size: var(--t-h2);
+  line-height: 1.3;
+  color: var(--text);
+}
+
+/* ─── Step 4: 民怨 ─── */
+.ty-resentment {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  gap: var(--space-7);
+  padding-top: var(--space-5);
+}
+.ty-proverb {
+  font-size: clamp(80px, 8vw, 140px);
+  line-height: 1.08;
+  font-family: var(--font-display-cn);
+  font-weight: 700;
+  color: var(--accent);
+  letter-spacing: var(--track-tight);
+}
+.ty-proverb-sub {
+  font-family: var(--font-body);
+  font-size: var(--t-h2);
+  line-height: 1.4;
+  color: var(--text-2);
+  max-width: 50ch;
+  margin-top: var(--space-3);
+}
+.ty-omen {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: var(--space-4);
+  margin-top: var(--space-3);
+  padding: var(--space-5) var(--space-7);
+  border: 1px solid var(--rule);
+  border-radius: var(--r-sm);
+  background: var(--surface-2);
+}
+.ty-omen-label {
+  font-family: var(--font-mono);
+  font-size: 11px;
+  letter-spacing: 0.18em;
+  text-transform: uppercase;
+  color: var(--text-mute);
+}
+.ty-omen-text {
+  font-family: var(--font-display-cn);
+  font-size: var(--t-h1);
+  font-weight: 700;
+  line-height: 1.2;
+  color: var(--text);
+}
+
+/* ─── Step 5: 反抗暗流 ─── */
+.ty-rebellion {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  gap: var(--space-7);
+  padding-top: var(--space-5);
+}
+.ty-rebel-signal {
+  font-size: clamp(100px, 10vw, 170px);
+  line-height: 1;
+  font-family: var(--hero-num-font);
+  font-style: var(--hero-num-style);
+  font-weight: var(--hero-num-weight);
+  color: var(--text);
+}
+.ty-rebel-body {
+  font-family: var(--font-body);
+  font-size: var(--t-h2);
+  line-height: 1.4;
+  color: var(--text-2);
+  max-width: 55ch;
+}
+.ty-rebel-foot {
+  display: flex;
+  align-items: center;
+  gap: var(--space-3);
+  margin-top: var(--space-3);
+}

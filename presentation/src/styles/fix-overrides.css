@@ -1,0 +1,63 @@
+/* ─────────────────────────────────────────────────────────────────────
+ * fix-overrides.css — 全面字号提升
+ * 原则：最小可读字号16px，标签/注释18px，正文20px
+ * ───────────────────────────────────────────────────────────────────── */
+
+/* --- 减少stage padding释放垂直空间 --- */
+:root {
+  --stage-pad-y: 60px !important;
+  --stage-pad-x: 120px !important;
+}
+
+/* --- MaskReveal 裁剪修复 --- */
+.mask-reveal {
+  padding-right: 6px !important;
+}
+
+/* --- masthead/issue/kicker 整体提升 --- */
+.masthead .brand { font-size: 42px !important; }
+.masthead .issue { font-size: 20px !important; }
+.kicker { font-size: 22px !important; }
+.label-mono { font-size: 18px !important; }
+
+/* --- 所有pill标签（mono小圆标）统一提升 --- */
+.lg-tl-tag,
+.im-scam-tag,
+.ccu-tl-tag,
+.ty-fire-tag,
+.hh-slag-icon { font-size: 16px !important; padding: 4px 14px !important; }
+
+/* --- 时间线/年号标签 --- */
+.lg-ch-year,
+.ccu-tl-year,
+.ccu-rebel-year,
+.im-journey-loc,
+.im-year,
+.hh-year { font-size: 18px !important; }
+
+/* --- 事件描述文字（正文级） --- */
+.lg-footnote,
+.ccu-power-group-item,
+.ccu-endurance-bar-label,
+.ccu-fall-num,
+.ccu-map-state .ccu-map-name,
+.ccu-power-kicker,
+.ref-year,
+.im-route-dot::after,
+.im-route-dot-first::before,
+.im-fish-label,
+.ty-data-label,
+.ty-mercury-label,
+.ty-omen-label,
+.hh-neglect-label,
+.hh-death-stat-label,
+.hh-rev-sub { font-size: 18px !important; }
+
+/* --- 极小文字特别拉升 --- */
+.im-death-will-label,
+.im-scam-tag { font-size: 16px !important; }
+
+/* --- 第7章额外修复 --- */
+.hh-neglect-label { font-size: 18px !important; letter-spacing: 0.15em !important; }
+.hh-death-stat-label { font-size: 18px !important; }
+.hh-rev-sub { font-size: 20px !important; }
