@@ -2,6 +2,8 @@
 
 > 基于 [ConardLi/garden-skills](https://github.com/ConardLi/garden-skills) 的 `web-video-presentation` 技能构建的 16:9 历史视频演示项目。
 
+🔗 **在线预览**：[ic-sd.github.io/qin-history-video](https://ic-sd.github.io/qin-history-video/)
+
 8 章节交互式历史演示，kraft-paper 主题，支持音频配音与自动播放。
 
 ## 预览
