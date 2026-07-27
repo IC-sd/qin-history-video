@@ -26,12 +26,15 @@ function estimateMs(text: string): number {
 }
 
 export default function App() {
-  const stepper = useStepper(CHAPTERS);
+  const { mode, cycleMode, autoStarted, setAutoStarted } = useAutoMode();
+  const stepper = useStepper(CHAPTERS, {
+    // Space releases the autoplay gate. Letting the stepper handle the same
+    // key would skip the first frame at the exact moment playback starts.
+    spaceToAdvance: mode !== "auto",
+  });
   const ch = CHAPTERS[stepper.cursor.chapter]!;
   const Cmp = ch.Component;
   const stepText = ch.narrations[stepper.cursor.step] ?? "";
-
-  const { mode, cycleMode, autoStarted, setAutoStarted } = useAutoMode();
 
   // Audio path follows the convention: /audio/<chapter-id>/<step+1>.mp3
   // (1-indexed file names match what `extract-narrations.ts` outputs.)

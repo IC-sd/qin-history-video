@@ -34,7 +34,7 @@ export function ProgressBar({
   onJumpChapter,
   githubUrl = DEFAULT_GITHUB_URL,
 }: Props) {
-  const activeRef = useRef<HTMLButtonElement | null>(null);
+  const activeRef = useRef<HTMLDivElement | null>(null);
 
   useEffect(() => {
     activeRef.current?.scrollIntoView({
@@ -50,22 +50,30 @@ export function ProgressBar({
         {chapters.map((c, i) => {
           const isActive = i === cursor.chapter;
           return (
-            <button
+            <div
               key={c.id}
               ref={isActive ? activeRef : undefined}
               className={`pb-chapter ${isActive ? "pb-active" : ""}`}
-              onClick={(e) => {
-                e.stopPropagation();
-                onJumpChapter(i, 0);
-              }}
             >
-              <span className="pb-num">{String(i + 1).padStart(2, "0")}</span>
-              <span className="pb-title">{c.title}</span>
+              <button
+                type="button"
+                className="pb-chapter-main"
+                aria-label={`跳转到第 ${i + 1} 章：${c.title}`}
+                onClick={(e) => {
+                  e.stopPropagation();
+                  onJumpChapter(i, 0);
+                }}
+              >
+                <span className="pb-num">{String(i + 1).padStart(2, "0")}</span>
+                <span className="pb-title">{c.title}</span>
+              </button>
               {isActive && (
                 <div className="pb-pips">
                   {Array.from({ length: c.narrations.length }, (_, s) => (
-                    <span
+                    <button
+                      type="button"
                       key={s}
+                      aria-label={`跳转到第 ${i + 1} 章第 ${s + 1} 步`}
                       className={`pb-pip ${
                         s <= cursor.step ? "pb-pip-on" : ""
                       }`}
@@ -77,7 +85,7 @@ export function ProgressBar({
                   ))}
                 </div>
               )}
-            </button>
+            </div>
           );
         })}
       </div>

@@ -27,6 +27,8 @@ export function AutoToggle({ mode, onCycle }: Props) {
           onCycle();
         }}
         title="切换播放模式（M）"
+        aria-label={`当前为 ${LABEL[mode]} 模式；点击切换`}
+        type="button"
       >
         <span className="at-dot" />
         <span className="at-label">{LABEL[mode]}</span>

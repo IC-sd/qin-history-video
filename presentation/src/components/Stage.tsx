@@ -36,7 +36,11 @@ export function Stage({ onAdvance, children }: Props) {
           style={frameStyle}
           onClick={(e) => {
             const t = e.target as HTMLElement;
-            if (t.closest("button, a, input, [data-no-advance]")) return;
+            if (
+              t.closest(
+                "button, a, input, textarea, select, [contenteditable], [data-no-advance]",
+              )
+            ) return;
             onAdvance();
           }}
         >

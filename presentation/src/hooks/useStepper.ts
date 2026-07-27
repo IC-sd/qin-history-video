@@ -21,6 +21,11 @@ export interface StepperState {
   jumpToGlobal(globalIdx: number): void;
 }
 
+interface StepperOptions {
+  /** Whether Space advances a step. Disable while Auto mode owns the key. */
+  spaceToAdvance?: boolean;
+}
+
 const clamp = (n: number, lo: number, hi: number) =>
   Math.max(lo, Math.min(hi, n));
 
@@ -38,7 +43,10 @@ function sanitize(cursor: Cursor, chapters: ChapterDef[]): Cursor {
   return { chapter, step };
 }
 
-export function useStepper(chapters: ChapterDef[]): StepperState {
+export function useStepper(
+  chapters: ChapterDef[],
+  { spaceToAdvance = true }: StepperOptions = {},
+): StepperState {
   const [cursor, setCursor] = useState<Cursor>(() => {
     const fallback = { chapter: 0, step: 0 };
     if (typeof window === "undefined") return fallback;
@@ -138,8 +146,13 @@ export function useStepper(chapters: ChapterDef[]): StepperState {
 
   useEffect(() => {
     const onKey = (e: KeyboardEvent) => {
-      if (e.target instanceof HTMLInputElement) return;
-      if (e.key === "ArrowRight" || e.key === " ") {
+      if (
+        e.target instanceof HTMLInputElement ||
+        e.target instanceof HTMLTextAreaElement ||
+        e.target instanceof HTMLSelectElement ||
+        (e.target instanceof HTMLElement && e.target.isContentEditable)
+      ) return;
+      if (e.key === "ArrowRight" || (e.key === " " && spaceToAdvance)) {
         e.preventDefault();
         next();
       } else if (e.key === "ArrowLeft" || e.key === "Backspace") {
@@ -157,7 +170,7 @@ export function useStepper(chapters: ChapterDef[]): StepperState {
     };
     window.addEventListener("keydown", onKey);
     return () => window.removeEventListener("keydown", onKey);
-  }, [next, prev, jumpToChapter, chapters]);
+  }, [next, prev, jumpToChapter, chapters, spaceToAdvance]);
 
   const ch = chapters[cursor.chapter]!;
   return {

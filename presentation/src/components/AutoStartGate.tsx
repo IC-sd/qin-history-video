@@ -19,16 +19,23 @@ export function AutoStartGate({ visible, onStart }: Props) {
       className="auto-gate"
       data-no-advance
       onClick={onStart}
+      onKeyDown={(event) => {
+        if (event.key === "Enter" || event.key === " ") {
+          event.preventDefault();
+          onStart();
+        }
+      }}
       role="button"
       tabIndex={0}
+      aria-label="启动自动播放"
     >
       <div className="auto-gate-card">
         <div className="auto-gate-kicker">AUTO PLAYBACK</div>
-        <div className="auto-gate-title">Press SPACE to start</div>
+        <div className="auto-gate-title">按空格键开始播放</div>
         <div className="auto-gate-sub">
-          Audio plays per step and advances automatically.
+          每一步会自动播放配音，并在结束后继续。
           <br />
-          Press <kbd>M</kbd> any time to switch modes.
+          随时按 <kbd>M</kbd> 切换播放模式。
         </div>
       </div>
     </div>

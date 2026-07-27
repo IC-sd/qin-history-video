@@ -49,7 +49,12 @@ export function useAutoMode() {
   // Keyboard: `M` cycles mode. `Space` starts auto if gated.
   useEffect(() => {
     const onKey = (e: KeyboardEvent) => {
-      if (e.target instanceof HTMLInputElement) return;
+      if (
+        e.target instanceof HTMLInputElement ||
+        e.target instanceof HTMLTextAreaElement ||
+        e.target instanceof HTMLSelectElement ||
+        (e.target instanceof HTMLElement && e.target.isContentEditable)
+      ) return;
       if (e.key === "m" || e.key === "M") {
         e.preventDefault();
         cycleMode();

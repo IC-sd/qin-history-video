@@ -39,7 +39,8 @@
   background: var(--text-faint);
   border-radius: 2px;
 }
-.pb-hover:hover .pb {
+.pb-hover:hover .pb,
+.pb-hover:focus-within .pb {
   opacity: 1;
   transform: translateY(0);
 }
@@ -56,11 +57,20 @@
   border-radius: 4px;
   font-family: var(--font-mono);
   font-size: 11px;
-  cursor: pointer;
   transition: color var(--dur-quick), border-color var(--dur-quick);
 }
 .pb-chapter:hover {
   color: var(--text);
+}
+.pb-chapter-main {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  cursor: pointer;
+}
+.pb-chapter-main:focus-visible {
+  outline: 2px solid var(--accent);
+  outline-offset: 3px;
 }
 .pb-active {
   color: var(--text);
@@ -89,6 +99,10 @@
 .pb-pip-on {
   background: var(--accent);
 }
+.pb-pip:focus-visible {
+  outline: 2px solid var(--accent);
+  outline-offset: 3px;
+}
 
 .pb-github {
   position: absolute;
@@ -113,7 +127,8 @@
 .pb-github:hover {
   color: var(--accent);
 }
-.pb-hover:hover .pb-github {
+.pb-hover:hover .pb-github,
+.pb-hover:focus-within .pb-github {
   opacity: 1;
   transform: translateY(0);
 }
