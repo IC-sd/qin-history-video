@@ -6,3 +6,6 @@ dist/
 Thumbs.db
 .env
 audio-segments.json
+__pycache__/
+*.pyc
+.venv/

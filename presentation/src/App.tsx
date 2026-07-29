@@ -66,6 +66,7 @@ export default function App() {
         chapters={CHAPTERS}
         cursor={stepper.cursor}
         onJumpChapter={stepper.jumpToChapter}
+        githubUrl="https://github.com/IC-sd/qin-history-video"
       />
       <AutoToggle mode={mode} onCycle={cycleMode} />
       <AutoStartGate

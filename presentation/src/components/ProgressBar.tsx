@@ -14,7 +14,7 @@ interface Props {
 }
 
 const DEFAULT_GITHUB_URL =
-  "https://github.com/ConardLi/garden-skills";
+  "https://github.com/IC-sd/qin-history-video";
 
 /**
  * Hidden-on-hover progress bar, fixed to the bottom of the viewport.
